@@ -195,10 +195,10 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<url>http://52.79.134.217:8080/manager/text</url>
+					<url>http://ip:8080/manager/text</url>
 					<path>/partner_admin</path>
-					<username>admin</username>
-					<password>vpstusfjs00!!</password>
+					<username></username>
+					<password></password>
 					<update>true</update>
 					<skipTests>true</skipTests>
 				</configuration>
