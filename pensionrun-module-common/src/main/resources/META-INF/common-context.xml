@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<!-- S3 -->
+	<bean id="accesskeys" class="com.amazonaws.auth.BasicAWSCredentials">
+		<constructor-arg value="AKIAIQIEMAO6L6QKJCFA" />
+		<constructor-arg value="MuQdW1Zm5IewkSer2+bYHdI3UqXxqyE0qwromWMB" />
+	</bean>
+	<bean id="clientConfiguration" class="com.amazonaws.ClientConfiguration">
+		<property name="socketTimeout" value="70000" />
+	</bean>
+	<bean id="amazonS3Client" class="com.amazonaws.services.s3.AmazonS3Client">
+		<constructor-arg ref="accesskeys" />
+		<constructor-arg ref="clientConfiguration" />
+	</bean>
+	<!-- S3 -->
+	
+	<!-- mailForm -->
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="resourceLoaderPath" value="/views"/>
+	</bean>
+	<!-- mailForm -->
+	
+	
+</beans>
